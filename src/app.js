@@ -5,14 +5,27 @@ app.listen(3000,()=>{
     console.log("Server is successfully listing on port 3000.");
 });
 
-app.use("/test",(req,res)=>{
-    res.send("hello from the server");
+app.get("/user",(req,res)=>{
+    res.send({firstName :"Sakshi", lastName: "kataria"});
 });
 
-app.use("/hello",(req,res)=>{
-    res.send("hello hello hello");
+app.post("/user",(req,res)=>{
+    res.send("data successfully saved to database.");
 });
 
-app.use("/",(req,res)=>{
-    res.send("hello Namaste from Dashboard");
+app.delete("/user",(req,res)=>{
+    res.send("data successfully deleted in the database.");
 });
+// app.use("/test",(req,res)=>{
+//     res.send("hello from the server");
+// });
+
+// app.use("/hello",(req,res)=>{
+//     res.send("hello hello hello");
+// });
+
+// app.use("/",(req,res)=>{
+//     res.send("hello Namaste from Dashboard");
+// });
+
+
